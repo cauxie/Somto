@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somto Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    /* Outline text effect */
+    .text-outline {
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
+    /* Custom cursor style */
+    .cursor-circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #ec4899; /* Tailwind pink-500 */
+      border-radius: 9999px;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 50;
+      transition: transform 0.15s ease-out, width 0.15s, height 0.15s, background-color 0.15s;
+    }
+    .cursor-hover {
+      transform: scale(2);
+      background-color: white;
+    }
+        .list {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 40px 0;
+      gap: 6px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      flex-wrap: nowrap;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+  .list {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Smaller space between images */
+  margin-top: 2.5rem; /* Matches mt-10 */
+  overflow-x: auto;
+  padding: 0 10px;
+}
+
+.item {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: 0.5s cubic-bezier(.87, 1.38, .03, 1.54);
+  filter: brightness(0.05);
+  overflow: hidden;
+  pointer-events: auto;
+  width: 160px; /* match image width */
+  height: 300px; /* ensure uniform height */
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* reduced space between images */
+  overflow-x: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 160px; /* base width */
+  height: 300px;
+  transition: all 0.5s cubic-bezier(.87, 1.38, .03, 1.54);
+  filter: grayscale(100%) brightness(0.6); /* grayscale and dim by default */
+  flex-shrink: 0; /* prevent shrinking */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.item:hover {
+  width: 220px; /* expands on hover */
+  filter: grayscale(0%) brightness(1); /* remove grayscale and brighten */
+  z-index: 10; /* stack on top */
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+
+  </style>
+</head>
+<body class="bg-white text-gray-900 relative overflow-hidden">
+
+  <!-- Fancy Cursor -->
+  <div id="cursor" class="cursor-circle"></div>
+
+  <!-- Navbar -->
+  <header class="absolute top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-10">
+    <div class="flex items-center space-x-1">
+      <a href="index.html" class="text-2xl font-extrabold">Somto<span class="text-pink-600">.</span></a>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+      <a href="work.html" id="nav-design" class="hover:text-black">Projects</a>
+      <a href="photo.html" id="nav-photos" class="hover:text-black">Photos</a>
+      <a href="about.html" id="nav-about" class="hover:text-black">About</a>
+     
+      <a href="mailto:somtexy9026@gmail.com?subject=Project%20Inquiry&body=Hi%20Somto," 
+   class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">
+   hello@somto.fr
+</a>
+
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none">
+      <span class="w-full h-0.5 bg-black"></span>
+      <span class="w-full h-0.5 bg-black"></span>
+      <span class="w-full h-0.5 bg-black"></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden z-50">
+      <div class="flex flex-col items-center space-y-4 py-6 text-sm font-medium text-gray-700">
+        <a href="work.html" id="m-nav-design" class="hover:text-black">Projects</a>
+        <a href="photo.html" id="m-nav-photos" class="hover:text-black">Photos</a>
+        <a href="about.html" id="m-nav-about" class="hover:text-black">About</a>
+       
+        <a href="mailto:somtexy9026@gmail.com?subject=Project%20Inquiry&body=Hi%20Somto," 
+   class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">
+   hello@somto.fr
+</a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+   <section>
+   <!-- Main Content -->
+  <main class="flex flex-col min-h-screen">
+    
+    <!-- Center Message Section -->
+    <section class="flex-grow flex items-center justify-center text-center px-6 pt-28 pb-12">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-semibold mb-3">
+          No photos have been uploaded here yet 📷
+        </h1>
+        <p class="text-gray-600 text-lg">
+          Please check our Instagram for photos — 
+          <a 
+            href="https://www.instagram.com/meet_somto/" 
+            target="_blank"
+            class="text-indigo-600 hover:text-purple-600 font-medium underline transition"
+          >
+            @meet_somto
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 text-center py-6">
+      <p class="text-sm">
+        © <span class="text-indigo-400 font-semibold">2025 Christian Somto</span>.
+      </p>
+      <p class="text-xs mt-2 text-gray-500 hover:text-gray-300 transition-all">
+        Designed with ❤️ using <span class="text-indigo-400">TailwindCSS</span>.
+      </p>
+    </footer>
+
+  </main>
+
+
+ <!-- Scripts -->
+  <script>
+    // ===== Fancy Cursor Logic =====
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
+    });
+
+    // Enlarge cursor on hover
+    const hoverables = document.querySelectorAll('a, button');
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+
+    // ===== Mobile menu toggle =====
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+  
+
+    function setLanguage(lang) {
+      const t = texts[lang];
+      // Navbar
+      document.getElementById('nav-design').textContent = t.nav.design;
+      document.getElementById('nav-photos').textContent = t.nav.photos;
+      document.getElementById('nav-about').textContent = t.nav.about;
+      document.getElementById('nav-contact').textContent = t.nav.contact;
+      document.getElementById('m-nav-design').textContent = t.nav.design;
+      document.getElementById('m-nav-photos').textContent = t.nav.photos;
+      document.getElementById('m-nav-about').textContent = t.nav.about;
+      document.getElementById('m-nav-contact').textContent = t.nav.contact;
+      // Hero
+      document.getElementById('intro-text').textContent = t.hero.intro;
+      document.getElementById('hero-title').childNodes[0].nodeValue = t.hero.title + " ";
+      document.getElementById('hero-subtitle').textContent = t.hero.subtitle;
+      document.getElementById('location-text').textContent = t.hero.location;
+      document.getElementById('btn-designer').textContent = t.hero.btn1;
+      document.getElementById('btn-photographer').textContent = t.hero.btn2;
+      // Highlight selected
+      [btnEN, mBtnEN, btnFR, mBtnFR].forEach(b => b.classList.remove("text-black","border-b","border-black","font-semibold"));
+      if (lang === "en") {
+        btnEN.classList.add("text-black","border-b","border-black","font-semibold");
+        mBtnEN.classList.add("text-black","border-b","border-black","font-semibold");
+      } else {
+        btnFR.classList.add("text-black","border-b","border-black","font-semibold");
+        mBtnFR.classList.add("text-black","border-b","border-black","font-semibold");
+      }
+    }
+
+   
+  </script>
+
+</body>
+</html>
