@@ -39,31 +39,13 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Custom cursor style */
-    .cursor-circle {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 24px;
-      height: 24px;
-      background-color: #ec4899; /* Tailwind pink-500 */
-      border-radius: 9999px;
-      pointer-events: none;
-      mix-blend-mode: difference;
-      z-index: 50;
-      transition: transform 0.15s ease-out, width 0.15s, height 0.15s, background-color 0.15s;
-    }
-    .cursor-hover {
-      transform: scale(2);
-      background-color: white;
-    }
+    
   </style>
 </head>
 
 <body class="bg-gray-900 text-white relative">
 
-    <!-- Fancy Cursor -->
-  <div id="cursor" class="cursor-circle"></div>
+   
 
   <!-- Animated Background -->
   <div class="bg-animation"></div>
@@ -185,18 +167,7 @@
  
    <!-- Scripts -->
   <script>
-    // ===== Fancy Cursor Logic =====
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
-    });
-
-    // Enlarge cursor on hover
-    const hoverables = document.querySelectorAll('a, button');
-    hoverables.forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-    });
+  
 
     // ===== Mobile menu toggle =====
     const menuBtn = document.getElementById('menu-btn');
