@@ -96,7 +96,7 @@
     <nav id="main-navbar" 
         class="flex items-center gap-6 bg-[#0d0e10] border border-[#1b1c1f] 
         px-5 py-3 rounded-[60px] shadow-[0_0_25px_rgba(0,0,0,0.55)]
-        backdrop-blur-xl w-[320px] transition-all duration-300 ease-out">
+        backdrop-blur-xl w-[295px] transition-all duration-300 ease-out">
 
         <div class="flex items-center gap-3">
             <img src="images/profile.jpg" class="w-10 h-10 rounded-full" />
@@ -142,14 +142,38 @@
             transition-all duration-300 ease-out p-4 w-40">
 
             <ul class="flex flex-col gap-3 text-white text-sm">
-                <li class="hover:text-green-400 cursor-pointer">Work</li>
-                <li class="hover:text-green-400 cursor-pointer">Experience</li>
-                <li class="hover:text-green-400 cursor-pointer">About</li>
-                <li class="hover:text-green-400 cursor-pointer">Testimonial</li>
-                <li class="hover:text-green-400 cursor-pointer">FAQs</li>
-                <li class="hover:text-green-400 cursor-pointer">Contact</li>
+    <li>
+        <a href="#projects" class="hover:text-green-400 cursor-pointer">
+            Work
+        </a>
+    </li>
+    <li>
+        <a href="#workh" class="hover:text-green-400 cursor-pointer">
+            Experience
+        </a>
+    </li>
+    <li>
+        <a href="#about" class="hover:text-green-400 cursor-pointer">
+            About
+        </a>
+    </li>
+    <li>
+        <a href="#testimonial" class="hover:text-green-400 cursor-pointer">
+            Testimonial
+        </a>
+    </li>
+    <li>
+        <a href="#faqs" class="hover:text-green-400 cursor-pointer">
+            FAQs
+        </a>
+    </li>
+    <li>
+        <a href="#contact" class="hover:text-green-400 cursor-pointer">
+            Contact
+        </a>
+    </li>
+</ul>
 
-            </ul>
         </div>
 
     </div>
@@ -210,12 +234,12 @@
       </h2>
 
       <!-- Description -->
-      <p class="text-gray-300 max-w-3xl text-2xl md:text-xl leading-relaxed px-4">
+      <p class="text-gray-300 max-w-3xl text-xl md:text-lg
+ leading-relaxed px-4">
         I build beautiful, functional websites — combining modern design, sharp UX, and reliable development to help brands stand out.
       </p>
 
       
-
       
 
 <style>
@@ -863,7 +887,8 @@
         }
     </style>
 
-    <section class="projects-section">
+    <section id="projects" class="projects-section">
+
         <div class="section-header">
             <p class="section-label">MY WORK</p>
             <h1 class="about-heading accent-end">
@@ -1523,7 +1548,7 @@ document.head.appendChild(style);
 
     </style>
 
-    <section class="work-section">
+    <section id="workh" class="work-section">
 
     <div class="work-header">WORK HISTORY</div>
     <div class="work-title accent-end">Teams I’ve added a little sparkle to</div>
@@ -1579,7 +1604,7 @@ document.head.appendChild(style);
 
 </section>
 
-<section class="about-section">
+<section id="about" class="about-section">
   <p class="section-label">ABOUT ME</p>
 
   <h1 class="about-heading accent-end">
@@ -1655,7 +1680,7 @@ document.head.appendChild(style);
   
 </section>
 
-<section class="testimonial-section">
+<section id="testimonial" class="testimonial-section">
   <p class="section-label">TESTIMONIALS</p>
 
   <h2 class="testimonial-heading accent-end">
@@ -1838,7 +1863,7 @@ document.head.appendChild(style);
         }
     </style>
 
-    <section class="faq-section">
+    <section id="faqs" class="faq-section">
         <div class="section-container">
             <div class="section-left">
                 <h1 class="section-title">You were probably wondering</h1>
@@ -2138,7 +2163,7 @@ document.head.appendChild(style);
 
 
 <!-- Place it AFTER all your content sections -->
-<footer class="portfolio-footer">
+<footer id="contact" class="portfolio-footer">
     <div class="footer-content">
         <a href="about.html" class="book-call-btn">Book Discovery Call</a>
         
@@ -2163,7 +2188,7 @@ document.head.appendChild(style);
             bookCallBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 // You can replace this with your actual booking link
-                window.open('https://wa.me/+2349022190684', '_blank');
+                window.open('about.html', '_blank');
                 // Or use an alert for now:
                 // alert("Let's book that discovery call!");
             });
